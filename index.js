@@ -1,4 +1,4 @@
-var GarageService = require('./GarageService.js').GarageService;
+var Server = require('./Server.js').Server;
 
 console.log('Starting server...');
-(new GarageService()).start();
+(new Server()).start();

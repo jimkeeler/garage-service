@@ -1,20 +1,21 @@
-var fs = require('fs');
-var https = require('https');
 var express = require('express');
-var ApiBuilder = require('./ApiBuilder').ApiBuilder;
+var WiflyAdapter = require('./WiflyAdapter').WiflyAdapter;
 
 function GarageService() {
-  this.port = 9000;
-  this.options = {
-    ca:          fs.readFileSync('ssl/ca.key'),
-    key:         fs.readFileSync('ssl/server.key'),
-    cert:        fs.readFileSync('ssl/server.crt'),
-    requestCert: true
+  this.getStatus = function() {
+    return 'Unknown';
   };
-  this.requestListener = (new ApiBuilder()).getListener();
 
-  this.start = function() {
-    https.createServer(this.options, this.requestListener).listen(this.port);
+  this.activate = function() {
+    return 'Click!';
+  };
+
+  this.getHistory = function() {
+    return 'None';
+  };
+
+  this.getTemperature = function () {
+    return 'Unknown';
   };
 };
 
