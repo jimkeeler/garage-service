@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var Server = require('../lib/server');
+
+
+console.log('Starting server...');
+(new Server()).start();
